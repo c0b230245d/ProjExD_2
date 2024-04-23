@@ -32,6 +32,12 @@ def check_bound(obj_rct:pg.Rect) -> tuple[bool,bool]:
 
 
 def hoko(obj_img) -> dict[tuple,pg.Surface]:
+    """
+    押下キーに対する移動量合計値タプルをキー
+    rotozoomで回転させたSurfaceを値とした辞書
+    引数：こうかとん画像
+    戻り値：合計値のタプル:rotozoomしたSurface
+    """
     flip_img = pg.transform.flip(obj_img, True, False)
     kaiten = {(-5, 0): pg.transform.rotozoom(obj_img, 0, 1.0),
               (-5, 5): pg.transform.rotozoom(obj_img, 45, 1.0),
